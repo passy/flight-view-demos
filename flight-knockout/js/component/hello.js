@@ -47,6 +47,16 @@ define(function (require) {
         entries: ['Uno', 'Zwei', 'Three'],
         removeEntry: function (entry) {
           self.model.entries.remove(this);
+        },
+        animateAdd: function (el) {
+          $(el).filter('li').hide().fadeIn();
+          console.log('animated', el);
+        },
+        animateDelete: function (el) {
+          // You would wanna use a neat CSS3 animation lib for this, of course.
+          $(el).filter('li').fadeOut(1000, function () {
+            this.remove();
+          });
         }
       };
 

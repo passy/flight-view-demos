@@ -19,7 +19,7 @@
         <button class=js-name-btn>Update</button>
 
         <h2>Iteration</h2>
-        <ol data-bind="foreach: entries">
+        <ol data-bind="foreach: {data: entries, afterAdd: animateAdd, beforeRemove: animateDelete}">
             <li data-bind="text: $data, click: $parent.removeEntry"></li>
         </ol>
 
