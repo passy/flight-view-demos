@@ -20,7 +20,8 @@ define(function (require) {
 
   function hello() {
     this.defaultAttrs({
-      buttonSelector: '.btn'
+      buttonSelector: '.js-name-btn',
+      formSelector: '.js-entry-form'
     });
 
     this.updateName = function () {
@@ -29,16 +30,31 @@ define(function (require) {
       console.log(this.model);
     };
 
+    this.handleSubmit = function (e) {
+      e.preventDefault();
+
+      this.addToList(this.model.newEntry);
+    };
+
+    this.addToList = function (entry) {
+      this.model.entries.push(entry);
+    };
+
     this.after('initialize', function () {
       this.model = {
         firstName: 'Tom',
-        lastName: 'Assworth' // I'm so funny.
+        lastName: 'Assworth', // I'm so funny.
+        entries: ['Uno', 'Two', 'Drei']
       };
 
       rivets.bind(this.$node, this.model);
 
       this.on('click', {
-        'buttonSelector': this.updateName
+        buttonSelector: this.updateName
+      });
+
+      this.on('submit', {
+        formSelector: this.handleSubmit
       });
 
       console.log('hello() initialized.');

@@ -8,14 +8,28 @@
     <h1>FlightJS + Rivets</h1>
 
     <div id=hello>
+        <h2>Simple Two-Way Binding</h2>
         <p>
-            <input placeholder="First Name" rv-value="firstName">
-            <input placeholder="Last Name" rv-value="lastName">
+            <input placeholder="First Name" rv-value=firstName>
+            <input placeholder="Last Name" rv-value=lastName>
         </p>
         <p>First name: <strong>{ firstName }</strong></p>
         <p>Last name: <strong>{ lastName }</strong></p>
 
-        <button class=btn>Update</button>
+        <button class="btn btn-primary js-name-btn">Update</button>
+
+        <h2>Iteration</h2>
+
+        <ol>
+            <li rv-each-entry=entries>{ entry }</li>
+        </ol>
+
+        <form class=js-entry-form>
+            <input type=text rv-value=newEntry>
+            <button class="btn btn-primary" placeholder="Add to list">Add Entry</button>
+        </form>
+
+        <p>
     </div>
 
     <script src=bower_components/rivets/dist/rivets.js></script>
