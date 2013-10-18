@@ -21,7 +21,8 @@ define(function (require) {
 
   function hello() {
     this.defaultAttrs({
-      buttonSelector: '.btn'
+      buttonSelector: '.js-name-btn',
+      formSelector: '.js-entry-form'
     });
 
     this.updateName = function () {
@@ -29,14 +30,33 @@ define(function (require) {
       this.model.middleName = '"Douchebag"';
     };
 
+    this.handleSubmit = function (e) {
+      e.preventDefault();
+
+      this.addToList(this.model.newEntry);
+      this.model.newEntry = '';
+    };
+
+    this.addToList = function (entry) {
+      this.model.entries.push(entry);
+    };
+
     this.after('initialize', function () {
       this.model = {
         firstName: 'Tom',
-        lastName: '#yolo' // I'm so funny.
+        lastName: '#yolo',
+        entries: ['Uno', 'Two', 'Drei'],
+        removeEntry: function (e, scope) {
+          scope.entries.splice(scope.entries.indexOf(scope.entry), 1);
+        }
       };
 
       this.on('click', {
-        'buttonSelector': this.updateName
+        buttonSelector: this.updateName
+      });
+
+      this.on('submit', {
+        formSelector: this.handleSubmit
       });
 
       console.log('hello() initialized.');

@@ -11,7 +11,9 @@ components of other frameworks.
   template engine would be hard.
 
 - Knockout + Flight: This is great. Combined with ES5 getters and setters it
-  feels like magic and requires super little setup code.
+  feels like magic and requires super little setup code. There's also support
+  for callbacks in loops so you can add animations. Without that it's nearly
+  impossible to animate the removal of a node.
 
 - Rivets + Flight: Wonderful experience. Comes with ES5 magic out of the box and
   just works. However, I wonder if there's a way to use transitions for loops
