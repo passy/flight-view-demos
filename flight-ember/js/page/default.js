@@ -6,7 +6,7 @@ define(function (require) {
    * Module dependencies
    */
 
-  // var searchColumn = require('component/search_column');
+  var hello = require('component/hello');
 
   /**
    * Module exports
@@ -20,5 +20,7 @@ define(function (require) {
 
   function initialize() {
     console.log('Initialized.');
+
+    hello.attachTo('#hello');
   }
 });
