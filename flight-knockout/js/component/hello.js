@@ -25,16 +25,18 @@ define(function (require) {
     });
 
     this.updateName = function () {
-      this.model.firstName('Pascal');
+      this.model.firstName = 'Pascal';
 
       console.log(this.model);
     };
 
     this.after('initialize', function () {
       this.model = {
-        firstName: ko.observable('Tom'),
+        firstName: 'Tom',
         lastName: 'Assworth' // I'm so funny.
       };
+
+      ko.track(this.model, ['firstName']);
 
       this.on('click', {
         'buttonSelector': this.updateName

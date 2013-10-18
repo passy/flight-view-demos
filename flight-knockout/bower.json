@@ -18,6 +18,7 @@
     "flight": "~1.1.1",
     "knockoutjs": "~2.3.0",
     "bootstrap": "~3.0.0",
-    "requirejs": "~2.1.9"
+    "requirejs": "~2.1.9",
+    "knockout-es5": "*"
   }
 }

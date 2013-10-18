@@ -12,7 +12,7 @@
             <input placeholder="First Name" data-bind="value: firstName">
             <input placeholder="Last Name" data-bind="value: lastName">
         </p>
-        <p>First name: <strong data-bind="visible: firstName">todo</strong></p>
+        <p>First name: <strong data-bind="text: firstName">todo</strong></p>
         <p>Last name: <strong data-bind="text: lastName">todo</strong></p>
 
         <button class=btn>Update</button>
@@ -20,5 +20,6 @@
 
     <script src=bower_components/jquery/jquery.js></script>
     <script src=http://knockoutjs.com/downloads/knockout-3.0.0rc.js></script>
+    <script src=bower_components/knockout-es5/dist/knockout-es5.js></script>
     <script src=bower_components/requirejs/require.js data-main=js/main.js></script>
 </div>
