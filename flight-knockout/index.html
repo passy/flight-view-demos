@@ -8,6 +8,7 @@
     <h1>FlightJS + Knockout</h1>
 
     <div id=hello>
+        <h2>Simple Two-Way Binding</h2>
         <p>
             <input placeholder="First Name" data-bind="value: firstName">
             <input placeholder="Last Name" data-bind="value: lastName">
@@ -15,7 +16,19 @@
         <p>First name: <strong data-bind="text: firstName">todo</strong></p>
         <p>Last name: <strong data-bind="text: lastName">todo</strong></p>
 
-        <button class=btn>Update</button>
+        <button class=js-name-btn>Update</button>
+
+        <h2>Iteration</h2>
+        <ol data-bind="foreach: entries">
+            <li data-bind="text: $data, click: $parent.removeEntry"></li>
+        </ol>
+
+        <form class=js-entry-form>
+            <input type=text data-bind="value: newEntry">
+            <button class="btn btn-primary" placeholder="Add to list">Add Entry</button>
+        </form>
+
+        <p>
     </div>
 
     <script src=bower_components/jquery/jquery.js></script>
