@@ -44,7 +44,12 @@ define(function (require) {
       this.model = {
         firstName: 'Tom',
         lastName: 'Assworth', // I'm so funny.
-        entries: ['Uno', 'Two', 'Drei']
+        entries: ['Uno', 'Two', 'Drei'],
+        removeEntry: function (e, scope) {
+          // Erm, yeah, that should be easier ...
+          var index = Array.prototype.slice.call(arguments[0].target.parentElement.children).indexOf(arguments[0].target);
+          scope.entries.splice(index, 1);
+        }
       };
 
       rivets.bind(this.$node, this.model);

@@ -21,7 +21,7 @@
         <h2>Iteration</h2>
 
         <ol>
-            <li rv-each-entry=entries>{ entry }</li>
+            <li rv-each-entry=entries rv-on-click=removeEntry rv-text=entry></li>
         </ol>
 
         <form class=js-entry-form>
