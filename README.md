@@ -12,3 +12,7 @@ components of other frameworks.
 
 - Knockout + Flight: This is great. Combined with ES5 getters and setters it
   feels like magic and requires super little setup code.
+
+- Rivets + Flight: Wonderful experience. Comes with ES5 magic out of the box and
+  just works. However, I wonder if there's a way to use transitions for loops
+  and showing/hiding elements.
