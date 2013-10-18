@@ -1,0 +1,23 @@
+{
+  "name": "flight-knockout",
+  "version": "0.0.0",
+  "homepage": "https://github.com/passy/flight-view-demos",
+  "authors": [
+    "Pascal Hartig <passy@twitter.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "flight": "~1.1.1",
+    "knockoutjs": "~2.3.0",
+    "bootstrap": "~3.0.0",
+    "requirejs": "~2.1.9"
+  }
+}
