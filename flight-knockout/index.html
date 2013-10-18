@@ -8,8 +8,14 @@
     <h1>FlightJS + Knockout</h1>
 
     <div id=hello>
-        <p>First name: <strong data-bind="text: firstName">todo</strong></p>
+        <p>
+            <input placeholder="First Name" data-bind="value: firstName">
+            <input placeholder="Last Name" data-bind="value: lastName">
+        </p>
+        <p>First name: <strong data-bind="visible: firstName">todo</strong></p>
         <p>Last name: <strong data-bind="text: lastName">todo</strong></p>
+
+        <button class=btn>Update</button>
     </div>
 
     <script src=bower_components/jquery/jquery.js></script>

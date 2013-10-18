@@ -7,12 +7,13 @@ define(function (require) {
    */
 
   var defineComponent = require('flight/lib/component');
+  var withKnockout = require('component/with_knockout');
 
   /**
    * Module exports
    */
 
-  return defineComponent(hello);
+  return defineComponent(hello, withKnockout);
 
   /**
    * Module function
@@ -20,22 +21,26 @@ define(function (require) {
 
   function hello() {
     this.defaultAttrs({
-      template: ''
+      buttonSelector: '.btn'
     });
 
-    this.model = {
-      firstName: 'Tom',
-      lastName: 'Assworth' // I'm so funny.
-    };
+    this.updateName = function () {
+      this.model.firstName('Pascal');
 
-    this.loadKnockout = function () {
-      ko.applyBindings(this.model, this.node);
+      console.log(this.model);
     };
 
     this.after('initialize', function () {
-      console.log('hello() initialized.');
+      this.model = {
+        firstName: ko.observable('Tom'),
+        lastName: 'Assworth' // I'm so funny.
+      };
 
-      this.loadKnockout();
+      this.on('click', {
+        'buttonSelector': this.updateName
+      });
+
+      console.log('hello() initialized.');
     });
   }
 
