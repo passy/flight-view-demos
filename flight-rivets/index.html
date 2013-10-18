@@ -10,10 +10,10 @@
     <div id=hello>
         <p>
             <input placeholder="First Name" rv-value="firstName">
+            <input placeholder="Middle Name" rv-value="middleName">
             <input placeholder="Last Name" rv-value="lastName">
         </p>
-        <p>First name: <strong>{ firstName }</strong></p>
-        <p>Last name: <strong>{ lastName }</strong></p>
+        <p>{ firstName } { middleName } { lastName }</p>
 
         <button class=btn>Update</button>
     </div>

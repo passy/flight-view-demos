@@ -7,12 +7,13 @@ define(function (require) {
    */
 
   var defineComponent = require('flight/lib/component');
+  var withModel = require('component/with_model');
 
   /**
    * Module exports
    */
 
-  return defineComponent(hello);
+  return defineComponent(hello, withModel);
 
   /**
    * Module function
@@ -25,17 +26,14 @@ define(function (require) {
 
     this.updateName = function () {
       this.model.firstName = 'Pascal';
-
-      console.log(this.model);
+      this.model.middleName = '"Douchebag"';
     };
 
     this.after('initialize', function () {
       this.model = {
         firstName: 'Tom',
-        lastName: 'Assworth' // I'm so funny.
+        lastName: '#yolo' // I'm so funny.
       };
-
-      rivets.bind(this.$node, this.model);
 
       this.on('click', {
         'buttonSelector': this.updateName
